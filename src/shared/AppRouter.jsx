@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "../components/Layout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -10,11 +10,11 @@ import TestResultPage from "../pages/TestResultPage";
 import { MbtiTestContext } from "../context/mbtiContext";
 import { useState } from "react";
 
-const Router = () => {
+const AppRouter = () => {
   const [user, setUser] = useState(null);
   return (
     <MbtiTestContext.Provider value={{ user, setUser }}>
-      <Router>
+      <BrowserRouter>
         <Layout user={user} setUser={setUser}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -46,9 +46,9 @@ const Router = () => {
             />
           </Routes>
         </Layout>
-      </Router>
+      </BrowserRouter>
     </MbtiTestContext.Provider>
   );
 };
 
-export default Router;
+export default AppRouter;
