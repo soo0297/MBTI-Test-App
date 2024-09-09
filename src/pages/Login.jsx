@@ -1,20 +1,45 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "../api/auth";
+import { MbtiTestContext } from "../context/mbtiContext";
 
 const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const { loginToken } = useContext(MbtiTestContext);
+  const navigate = useNavigate();
 
   // 로그인 내용 제출 함수
+  const onLoginHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await login({
+        id,
+        password,
+      });
+      // console.log(response);
+      if (response.success) {
+        loginToken(response.accessToken);
+        navigate("/");
+      } else {
+        alert("Login failed");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Login failed");
+    }
+  };
 
   return (
     <div>
-      <form onSubmit={() => {}}>
+      <form onSubmit={onLoginHandler}>
         <label>아이디</label>
         <input
           value={id}
           onChange={(e) => {
             setId(e.target.value);
           }}
+          placeholder="ID"
         />
         <label>비밀번호</label>
         <input
@@ -22,6 +47,7 @@ const Login = () => {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          placeholder="PASSWORD"
         />
         <button onClick={() => {}}>로그인하기</button>
       </form>

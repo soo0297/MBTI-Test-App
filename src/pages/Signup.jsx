@@ -9,7 +9,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   // 회원가입 내용 제출 함수
-  const onSubmitHandler = async (e) => {
+  const onSignupHandler = async (e) => {
     e.preventDefault();
     try {
       const response = await register({ id, password, nickname });
@@ -25,7 +25,7 @@ const Signup = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmitHandler}>
+      <form onSubmit={onSignupHandler}>
         <label>아이디</label>
         <input
           value={id}
@@ -40,6 +40,7 @@ const Signup = () => {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          placeholder="PASSWORD"
         />
         <label>닉네임</label>
         <input
@@ -47,6 +48,7 @@ const Signup = () => {
           onChange={(e) => {
             setNickname(e.target.value);
           }}
+          placeholder="NICKNAME"
         />
         <button onClick={() => {}}>회원가입</button>
       </form>

@@ -21,18 +21,18 @@ const AppRouter = () => {
     }
   }, []);
 
-  const login = (token) => {
+  const loginToken = (token) => {
     localStorage.setItem("accessToken", token);
     setIsAuthenticated(true);
   };
 
-  const logout = () => {
+  const logoutToken = () => {
     localStorage.removeItem("accessToken");
     setIsAuthenticated(false);
   };
   return (
     <MbtiTestContext.Provider
-      value={{ user, setUser, isAuthenticated, login, logout }}
+      value={{ user, setUser, isAuthenticated, loginToken, logoutToken }}
     >
       <BrowserRouter>
         <Layout>
