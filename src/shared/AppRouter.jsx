@@ -8,39 +8,59 @@ import Profile from "../pages/Profile";
 import TestPage from "../pages/TestPage";
 import TestResultPage from "../pages/TestResultPage";
 import { MbtiTestContext } from "../context/mbtiContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AppRouter = () => {
   const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const login = (token) => {
+    localStorage.setItem("accessToken", token);
+    setIsAuthenticated(true);
+  };
+
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    setIsAuthenticated(false);
+  };
   return (
-    <MbtiTestContext.Provider value={{ user, setUser }}>
+    <MbtiTestContext.Provider
+      value={{ user, setUser, isAuthenticated, login, logout }}
+    >
       <BrowserRouter>
-        <Layout user={user} setUser={setUser}>
+        <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login setUser={setUser} />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route
               path="/profile"
               element={
-                <ProtectedRoute user={user}>
-                  <Profile user={user} setUser={setUser} />
+                <ProtectedRoute>
+                  <Profile />
                 </ProtectedRoute>
               }
             />
             <Route
               path="/test"
               element={
-                <ProtectedRoute user={user}>
-                  <TestPage user={user} />
+                <ProtectedRoute>
+                  <TestPage />
                 </ProtectedRoute>
               }
             />
             <Route
               path="/results"
               element={
-                <ProtectedRoute user={user}>
-                  <TestResultPage user={user} />
+                <ProtectedRoute>
+                  <TestResultPage />
                 </ProtectedRoute>
               }
             />

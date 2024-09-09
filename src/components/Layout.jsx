@@ -6,11 +6,7 @@ const Layout = ({ children, user, setUser }) => {
   const navigate = useNavigate();
 
   // 이곳에서 로그인 하지 않은 사용자를 login 페이지로 보내줄 거에요.
-  useEffect(() => {
-    navigate("/login");
-
-    setUser();
-  }, []);
+  useEffect(() => {}, []);
 
   const handleLogout = () => {};
 
