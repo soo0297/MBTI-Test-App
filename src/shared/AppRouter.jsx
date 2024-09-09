@@ -32,7 +32,14 @@ const AppRouter = () => {
   };
   return (
     <MbtiTestContext.Provider
-      value={{ user, setUser, isAuthenticated, loginToken, logoutToken }}
+      value={{
+        user,
+        setUser,
+        isAuthenticated,
+        setIsAuthenticated,
+        loginToken,
+        logoutToken,
+      }}
     >
       <BrowserRouter>
         <Layout>
@@ -43,25 +50,28 @@ const AppRouter = () => {
             <Route
               path="/profile"
               element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
+                <ProtectedRoute
+                  isAuthenticated={isAuthenticated}
+                  page={<Profile />}
+                />
               }
             />
             <Route
               path="/test"
               element={
-                <ProtectedRoute>
-                  <TestPage />
-                </ProtectedRoute>
+                <ProtectedRoute
+                  isAuthenticated={isAuthenticated}
+                  page={<TestPage />}
+                />
               }
             />
             <Route
               path="/results"
               element={
-                <ProtectedRoute>
-                  <TestResultPage />
-                </ProtectedRoute>
+                <ProtectedRoute
+                  isAuthenticated={isAuthenticated}
+                  page={<TestResultPage />}
+                />
               }
             />
           </Routes>
