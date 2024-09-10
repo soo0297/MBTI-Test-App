@@ -19,7 +19,6 @@ const TestResultItem = ({ result, onUpdate, onDelete }) => {
     try {
       const newVisibility = !result.visibility;
       await updateTestResultVisibility(result.id, newVisibility);
-      console.log("newVisibility:", newVisibility);
       onUpdate(); // 부모 컴포넌트에서 결과 목록을 다시 불러오도록 요청
     } catch (error) {
       console.error("Visibility toggle failed:", error);

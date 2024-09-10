@@ -16,11 +16,15 @@ export const login = async (userData) => {
 
 // 회원정보 확인
 export const getUserProfile = async (token) => {
-  const response = await axios.get(`${API_URL}/user`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await axios
+    .get(`${API_URL}/user`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .catch((error) => {
+      console.error("error", error);
+    });
   return response.data;
 };
 

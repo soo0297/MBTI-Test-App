@@ -50,6 +50,7 @@ const Login = () => {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          type="password"
           placeholder="PASSWORD"
         />
         <button onClick={() => {}}>로그인하기</button>

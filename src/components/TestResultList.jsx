@@ -4,7 +4,6 @@ import { MbtiTestContext } from "../context/mbtiContext";
 
 const TestResultList = ({ results, onUpdate, onDelete }) => {
   const { user } = useContext(MbtiTestContext);
-  console.log("user:", user);
   return (
     <div className="space-y-4">
       {results

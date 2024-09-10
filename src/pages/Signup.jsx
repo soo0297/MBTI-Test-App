@@ -40,6 +40,7 @@ const Signup = () => {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          type="password"
           placeholder="PASSWORD"
         />
         <label>닉네임</label>

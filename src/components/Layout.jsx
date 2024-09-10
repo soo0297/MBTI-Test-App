@@ -14,8 +14,12 @@ const Layout = ({ children }) => {
     try {
       const response = await getUserProfile(token);
       setUser(response);
+      console.log("response:", response);
     } catch (error) {
-      console.error(error.response);
+      console.error(error);
+      localStorage.removeItem("accessToken");
+      setIsAuthenticated(false);
+      navigate("/");
     }
   };
 

@@ -21,6 +21,7 @@ const TestResult = ({ user }) => {
   const handleDelete = () => {
     fetchResults();
   };
+
   console.log(results);
   return (
     <div className="w-full flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-8">
