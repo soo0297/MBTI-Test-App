@@ -6,7 +6,8 @@ import { MbtiTestContext } from "../context/mbtiContext";
 const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-  const { loginToken, setIsAuthenticated } = useContext(MbtiTestContext);
+  const { loginToken, setIsAuthenticated, setUser } =
+    useContext(MbtiTestContext);
   const navigate = useNavigate();
 
   // 로그인 내용 제출 함수
@@ -18,6 +19,8 @@ const Login = () => {
         password,
       });
       if (response.success) {
+        console.log(response);
+        setUser({ id: response.userId, nickname: response.nickname });
         setIsAuthenticated(true);
         loginToken(response.accessToken);
         navigate("/");
