@@ -17,7 +17,6 @@ const Login = () => {
         id,
         password,
       });
-      // console.log(response);
       if (response.success) {
         setIsAuthenticated(true);
         loginToken(response.accessToken);

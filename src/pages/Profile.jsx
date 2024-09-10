@@ -4,10 +4,8 @@ import { updateProfile } from "../api/auth";
 const Profile = ({ user, setUser }) => {
   const [nickname, setNickname] = useState(user?.nickname || "");
 
-  const handleNicknameChange = async (e) => {
-    const response = await updateProfile();
-
-    // setNickname(e.target.value);
+  const handleNicknameChange = (e) => {
+    setNickname(e.target.value);
   };
 
   const handleSubmit = async (e) => {
@@ -21,7 +19,7 @@ const Profile = ({ user, setUser }) => {
         <form onSubmit={handleSubmit}>
           <div>
             <label>닉네임</label>
-            <input onChange={handleNicknameChange} />
+            <input onChange={handleNicknameChange} placeholder="NICKNAME" />
           </div>
           <button type="submit">프로필 업데이트</button>
         </form>

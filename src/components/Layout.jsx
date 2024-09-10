@@ -7,7 +7,6 @@ const Layout = ({ children }) => {
   const navigate = useNavigate();
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(MbtiTestContext);
-  // console.log(user);
 
   const token = localStorage.getItem("accessToken");
 
