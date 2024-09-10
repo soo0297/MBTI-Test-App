@@ -49,30 +49,15 @@ const AppRouter = () => {
             <Route path="/signup" element={<Signup />} />
             <Route
               path="/profile"
-              element={
-                <ProtectedRoute
-                  isAuthenticated={isAuthenticated}
-                  page={<Profile />}
-                />
-              }
+              element={<ProtectedRoute page={<Profile />} />}
             />
             <Route
               path="/test"
-              element={
-                <ProtectedRoute
-                  isAuthenticated={isAuthenticated}
-                  page={<TestPage />}
-                />
-              }
+              element={<ProtectedRoute page={<TestPage />} />}
             />
             <Route
               path="/results"
-              element={
-                <ProtectedRoute
-                  isAuthenticated={isAuthenticated}
-                  page={<TestResultPage />}
-                />
-              }
+              element={<ProtectedRoute page={<TestResultPage />} />}
             />
           </Routes>
         </Layout>
