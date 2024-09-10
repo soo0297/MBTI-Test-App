@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/testResults";
+const API_URL = "https://regular-dented-wormhole.glitch.me/testResults";
 
 export const getTestResults = async () => {
   const response = await axios.get(API_URL);
