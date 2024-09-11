@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       console.error(error);
       localStorage.removeItem("accessToken");
       setIsAuthenticated(false);
-      navigate("/");
+      navigate("/login");
     }
   };
 
@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <header className="flex items-center justify-between px-4">
+      <header className="flex items-center justify-between h-10 px-4 bg-slate-200 ">
         <div>
           <Link
             style={{
@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
           </Link>
         </div>
         <nav>
-          <div className="space-x-4 justify-items-end">
+          <div className="space-x-4 justify-items-end ">
             {isAuthenticated ? (
               <>
                 <Link to="/profile">마이프로필</Link>

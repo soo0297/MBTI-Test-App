@@ -32,9 +32,9 @@ const Test = () => {
 
   return (
     <div className="max-w-md mx-auto mt-10">
-      <h1 className="text-2xl font-bold mb-4">MBTI 테스트</h1>
+      <h1 className="text-2xl font-bold mb-4">MBTI 테스트 - 내 결과</h1>
       {isTestDone ? (
-        <div>
+        <div className="flex flex-col gap-4">
           <h2>{data.result}</h2>
           <p>{mbtiDescriptions[data.result]}</p>
           <button
@@ -42,6 +42,7 @@ const Test = () => {
             onClick={() => {
               navigate("/results");
             }}
+            className="bg-cyan-500 item-center w-40"
           >
             모든 결과 보러가기
           </button>

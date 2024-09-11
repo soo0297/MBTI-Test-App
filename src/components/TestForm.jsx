@@ -40,7 +40,7 @@ const TestForm = ({ onSubmit }) => {
       ))}
       <button
         type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+        className="w-full bg-cyan-500 text-white py-2 rounded hover:bg-blue-600"
         onClick={() => {}}
       >
         제출하기

@@ -40,14 +40,16 @@ const Profile = ({ user, setUser }) => {
 
   return (
     <div>
-      <div>
-        <h1>프로필 수정</h1>
-        <form onSubmit={submitHandler}>
-          <div>
+      <div className="flex flex-col justify-center items-center border-solid rounded-lg bg-slate-200 w-70 gap-4">
+        <h1 className="text-xl font-bold">프로필 수정</h1>
+        <form onSubmit={submitHandler} className="flex flex-col w-60 gap-3 ">
+          <div className="flex gap-4">
             <label>닉네임</label>
             <input onChange={handleNicknameChange} placeholder="NICKNAME" />
           </div>
-          <button type="submit">프로필 업데이트</button>
+          <button type="submit" className="bg-cyan-500">
+            닉네임 수정하기
+          </button>
         </form>
       </div>
     </div>

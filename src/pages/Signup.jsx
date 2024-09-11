@@ -24,34 +24,42 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSignupHandler}>
-        <label>아이디</label>
-        <input
-          value={id}
-          onChange={(e) => {
-            setId(e.target.value);
-          }}
-          placeholder="ID"
-        />
-        <label>비밀번호</label>
-        <input
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          type="password"
-          placeholder="PASSWORD"
-        />
-        <label>닉네임</label>
-        <input
-          value={nickname}
-          onChange={(e) => {
-            setNickname(e.target.value);
-          }}
-          placeholder="NICKNAME"
-        />
-        <button onClick={() => {}}>회원가입</button>
+    <div className="flex justify-center items-center border-solid rounded-lg bg-slate-200 w-70">
+      <form onSubmit={onSignupHandler} className="flex flex-col w-60 gap-4 ">
+        <div className="flex flex-col">
+          <label>아이디</label>
+          <input
+            value={id}
+            onChange={(e) => {
+              setId(e.target.value);
+            }}
+            placeholder="ID"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label>비밀번호</label>
+          <input
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            type="password"
+            placeholder="PASSWORD"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label>닉네임</label>
+          <input
+            value={nickname}
+            onChange={(e) => {
+              setNickname(e.target.value);
+            }}
+            placeholder="NICKNAME"
+          />
+        </div>
+        <button onClick={() => {}} className="bg-cyan-500">
+          회원가입
+        </button>
       </form>
     </div>
   );

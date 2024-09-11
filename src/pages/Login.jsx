@@ -34,26 +34,32 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={onLoginHandler} className="flex flex-col">
-        <label>아이디</label>
-        <input
-          value={id}
-          onChange={(e) => {
-            setId(e.target.value);
-          }}
-          placeholder="ID"
-        />
-        <label>비밀번호</label>
-        <input
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          type="password"
-          placeholder="PASSWORD"
-        />
-        <button onClick={() => {}}>로그인하기</button>
+    <div className="flex justify-center items-center border-solid rounded-lg bg-slate-200 w-70">
+      <form onSubmit={onLoginHandler} className="flex flex-col w-60 gap-4 ">
+        <div className="flex flex-col">
+          <label>아이디</label>
+          <input
+            value={id}
+            onChange={(e) => {
+              setId(e.target.value);
+            }}
+            placeholder="ID"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label>비밀번호</label>
+          <input
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            type="password"
+            placeholder="PASSWORD"
+          />
+        </div>
+        <button onClick={() => {}} className="bg-cyan-500">
+          로그인하기
+        </button>
       </form>
     </div>
   );
