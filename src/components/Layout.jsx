@@ -40,13 +40,13 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <header>
-        <h1>
+      <header className="flex items-center justify-between px-4">
+        <div>
           <Link
             style={{
               textDecoration: "none",
               color: "black",
-              fontSize: "30px",
+              fontSize: "20px",
               fontWeight: "bold",
               cursor: "pointer",
             }}
@@ -54,9 +54,9 @@ const Layout = ({ children }) => {
           >
             홈
           </Link>
-        </h1>
+        </div>
         <nav>
-          <div className="space-x-4">
+          <div className="space-x-4 justify-items-end">
             {isAuthenticated ? (
               <>
                 <Link to="/profile">마이프로필</Link>

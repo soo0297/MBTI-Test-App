@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <div>
-      <form onSubmit={onLoginHandler}>
+      <form onSubmit={onLoginHandler} className="flex flex-col">
         <label>아이디</label>
         <input
           value={id}

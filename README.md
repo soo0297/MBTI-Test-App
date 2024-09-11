@@ -1,6 +1,6 @@
 # MBTI-Test
 
-### [ 간단하게 알아보는 성격유형검사 MBTI-Test ](링크)
+### [ 간단하게 알아보는 성격유형검사 MBTI-Test ](https://mbti-test-app-nu.vercel.app/)
 
 ## 📖 목차
 
