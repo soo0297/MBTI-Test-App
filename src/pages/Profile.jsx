@@ -40,7 +40,7 @@ const Profile = ({ user, setUser }) => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center border-solid rounded-lg bg-slate-200 w-70 gap-4">
+      <div className="flex flex-col justify-center items-center border-solid rounded-lg bg-slate-200 gap-4 py-4">
         <h1 className="text-xl font-bold">프로필 수정</h1>
         <form onSubmit={submitHandler} className="flex flex-col w-60 gap-3 ">
           <div className="flex gap-4">

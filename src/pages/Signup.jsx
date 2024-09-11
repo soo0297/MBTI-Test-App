@@ -24,7 +24,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex justify-center items-center border-solid rounded-lg bg-slate-200 w-70">
+    <div className="flex justify-center items-center border-solid rounded-lg bg-slate-200 py-4">
       <form onSubmit={onSignupHandler} className="flex flex-col w-60 gap-4 ">
         <div className="flex flex-col">
           <label>아이디</label>
